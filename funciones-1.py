@@ -1,27 +1,29 @@
 # *************** ZONA FUNCIONES ***************
-def capturar_cantidad():
-    print("Digite la cantidad de numeros para sumar: ")
-    cantidad = int(input())
-    return cantidad
+def capturar_numero():
+    print ( "dijite el numero: ")
+    num = int(input())
+    return num
 
-def capturar_numeros(cantidad):
-    lista_numeros = []
-    for i in range(cantidad):
-        print("Digite el Numero " + str(i + 1) + ": ")
-        numero = int(input())
-        lista_numeros.append(numero)
-    return lista_numeros
+def tipo_de_numero(numero):
+    if numero > 0:
+        print("el numero es positivo")
+        
+    elif numero== 0:
+        print("el numero es NEUTRO")
+        
+    else:
+        print("el numero es negativo")
+        
+def imprimir_resultado(mensaje):
+    print(mensaje)
+    
+# ******************* ZONA PRINCIPAL *******************
 
-def sumar_numeros(lista):
-    suma = 0
-    for n in lista:
-        suma += n
-    return suma
-
-def imprimir_resultado(resultado):
-    print("La sumatoria total es: " + str(resultado))
-# *************** ZONA DE CODIGO PRINCIPAL***************
-cantidad_datos = capturar_cantidad()                # Función 1
-lista_datos = capturar_numeros(cantidad_datos)      # Función 1
-resultado_final = sumar_numeros(lista_datos)        # Función 2
-imprimir_resultado(resultado_final)                 # Función 3
+num = 1
+while num != 0:
+    num = capturar_numero()                 # Función 1
+    if num != 0:
+        mensaje= tipo_de_numero(num)
+        imprimir_resultado(mensaje)
+        
+print("finalizo el programa")
